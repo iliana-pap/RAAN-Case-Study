@@ -16,8 +16,11 @@ The project pipeline can be summarized below:
 
 ![image](Project_Pipeline.png)
 
+## Installation instructions
 
-Assumptions about visualizations:
+
+
+## Visualization assumptions:
 
 - 2D : The weights of the edges are present both as a number in the middle of the edge and as the width of the edge. Larger width corresponds to larger edge weight. Due to networkX implementation, in interacted nodes, their shared edge contains arrowheads in both ends.
 
@@ -27,8 +30,6 @@ Assumptions about visualizations:
 - 3D : The display of the edge weights is performed by defining an additional trace for weights. Weights_trace is a scatter trace, of mode='text', with x, y, z lists being the middle point coordinates of the edges. 
 
 The interactive 3-D visualization of the network can be found [here](https://network3dvisual.herokuapp.com/).
-
-
 
 
 ## References
