@@ -14,6 +14,8 @@ This project includes the 2D and 3D Visualizations of a network archichecture, u
 
 The project pipeline can be summarized below:
 
+![image](Project_Pipeline.png)
+
 
 Assumptions about visualizations:
 
