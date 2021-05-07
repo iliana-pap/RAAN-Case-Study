@@ -19,7 +19,7 @@ Assumptions about visualizations:
 
 - 2D : The weights of the edges are present both as a number in the middle of the edge and as the width of the edge. Larger width corresponds to larger edge weight. Due to networkX implementation, in interacted nodes, their shared edge contains arrowheads in both ends.
 
-![alt text] (Network_2D_Visualization.png)
+![image](Network_2D_Visualization.png)
 
 - 3D : Plotly and Dash do not enable the drawing of directed graphs, with the exception of introducing arrows in the form of annotations. However, the aforementioned restricts the interactivity of the network edges during live rotations. To overcome this issue, directed edges between two nodes have their weights very close to each other. In this case, for avoiding the overlapping, a small offset to the position of the weight has been introduced during the examination of the reversed edge.
 - 3D : The display of the edge weights is performed by defining an additional trace for weights. Weights_trace is a scatter trace, of mode='text', with x, y, z lists being the middle point coordinates of the edges. 
