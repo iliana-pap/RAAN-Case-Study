@@ -44,7 +44,6 @@ labels = nodes_df.set_index('node_id')['node_label'].to_dict()
 # Create 2-D visualization 
 Visualize_2D_Network(G,widths,labels)
 
-
 # Create 3-D visualization 
 # Fruchterman Reingold layout (compatible with networkX) for plotly data
 pos=nx.fruchterman_reingold_layout(G,dim=3) 
