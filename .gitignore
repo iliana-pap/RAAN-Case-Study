@@ -1,0 +1,5 @@
+network_visual_env
+__pycache__/
+*.pyc
+.env
+.DS_Store
