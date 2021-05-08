@@ -81,12 +81,20 @@ For updating the application on Heroku, follow the following steps:
 
 ## Visualization assumptions:
 
-- 2D : The weights of the edges are present both as a number in the middle of the edge and as the width of the edge. Larger width corresponds to larger edge weight. Due to networkX implementation, in interacted nodes, their shared edge contains arrowheads in both ends.
+- NetworkX library utilize the [Fruchterman Reingold layout](https://github.com/gephi/gephi/wiki/Fruchterman-Reingold) for plotting [Force-directed graphs](https://en.wikipedia.org/wiki/Force-directed_graph_drawing) in an aesthetically-pleasing manner. According to these algorithms, the set of nodes and edges share forces, based on their relative positions, which aid in simulating the motion of nodes and adges as well as diminish their energy. In additon, ideally most of the edges share similar weights and they are exclusive with each other, avoiding cross-overlapping.
+
+ 2D :
+ 
+ * The networkX [spring_layout](https://networkx.org/documentation/stable/reference/generated/networkx.drawing.layout.spring_layout.html) is applied  with tuned parameters (k = 4, iterations = 50) for enhanced visualization. K refers to the optimal distance between nodes, where larger values move nodes farther apart. 
+ 
+  * The weights of the edges are present both as a number in the middle of the edge and as the width of the edge. Larger width corresponds to larger edge weight. Due to networkX implementation, in interactive nodes their shared edge contains arrowheads in both ends.
 
 ![image](Network_2D_Visualization.png)
 
-- 3D : Plotly and Dash do not enable the drawing of directed graphs, with the exception of introducing arrows in the form of annotations. However, the aforementioned restricts the interactivity of the network edges during live rotations. To overcome this issue, directed edges between two nodes have their weights very close to each other. In this case, for avoiding the overlapping, a small offset to the position of the weight has been introduced during the examination of the reversed edge.
-- 3D : The display of the edge weights is performed by defining an additional trace for weights. Weights_trace is a scatter trace, of mode='text', with x, y, z lists being the middle point coordinates of the edges. 
+3D :
+
+* Plotly and Dash do not enable the drawing of directed graphs, with the exception of introducing arrows in the form of annotations. However, the aforementioned restricts the interactivity of the network edges during live rotations. To overcome this issue, directed edges between two nodes have their weights very close to each other. In this case, for avoiding the overlapping, a small offset to the position of the weight has been introduced during the examination of the reversed edge.
+* The display of the edge weights is performed by defining an additional trace for weights. Weights_trace is a scatter trace, of mode='text', with x, y, z lists being the middle point coordinates of the edges. 
 
 The interactive 3-D visualization of the network can be found [here](https://network3dvisual.herokuapp.com/).
 
