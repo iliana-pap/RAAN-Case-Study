@@ -67,6 +67,8 @@ def Visualize_2D_Network(G,widths,labels):
         labels :  dictionary with node_id as key and node_label as value
         
     """
+    # Find edge list
+    edge_list = {e: G.edges[e] for e in G.edges}
     
     # Add weights to edges
     weights = {e: G.edges[e]['weights'] for e in G.edges}
@@ -75,20 +77,22 @@ def Visualize_2D_Network(G,widths,labels):
     colors = [node[1]['color'] for node in G.nodes(data=True)]
 
     # Visualize network
-    pos = nx.spring_layout(G, k = 4, iterations = 50)
+    pos = nx.spring_layout(G, k = 10, iterations = 50)
 
-    fig = plt.figure(figsize=(10,10)) 
-    nx.draw(G,
-            pos,
-            labels = labels,
-            node_color=colors,
-           node_size = 500,
-            width=[x / 2 for x in list(widths.values())], 
-           edge_color='navy',ax=fig.add_subplot(111))
-  
-
+    fig = plt.figure(figsize=(20,20)) 
+    
+    nx.draw_networkx_nodes(G, pos,node_color = colors, node_size = 500)
+    nx.draw_networkx_labels(G, pos,labels = labels)
+    nx.draw_networkx_edges(G, pos, edgelist=edge_list, arrows=True,
+                            width=[x / 2 for x in list(widths.values())],
+                            edge_color='gray')
+    
+    edge_labels=dict([((u,v,),d['weights'])
+             for u,v,d in G.edges(data=True)])
+    
     # Add weights as edge labels
-    nx.draw_networkx_edge_labels(G, pos, edge_labels=weights) 
+    nx.draw_networkx_edge_labels(G, pos, edge_labels=edge_labels,label_pos=0.3) 
+  
     
     # Save network as image (.png format)
     fig.savefig("Network_2D_Visualization.png",dpi = 300)
