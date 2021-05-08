@@ -14,8 +14,60 @@ This project includes the 2D and 3D Visualizations of a network archichecture, u
 
 The project pipeline can be summarized below:
 
+![image](Project_Pipeline.png)
 
-Assumptions about visualizations:
+## Installation instructions
+
+For running the application locally, please run setup.sh
+
+Alternatively, you can execute the following steps :
+
+1. Clone the repository : \
+    _git clone git@github.com:iliana-pap/RAAN-Case-Study.git_
+3. _cd RAAN-Case-Study_
+4. Copy paste the data input file (raan_case_study interns.xlsx) into the directory
+5. Create a new conda environment : \
+   _conda create --name network_visual_env python=3.7.3_
+5. Activate the conda environment :\
+   _conda activate network_visual_env_
+6. Install the following package requirements : \
+   _pip install plotly==4.14.3_ \
+   _pip install dash==1.20.0_ \
+   _pip install networkx==2.5.1_ \
+   _pip install pandas==1.2.4_ \
+   _pip install matplotlib==3.4.1_ \ 
+   _pip install xlrd==2.0.1_ \
+   _pip install openpyxl== 3.0.7_ \
+   _pip install gunicorn==20.1.0_ **
+ 7. Run the application locally 
+    _python app.py_
+   
+  ** gunicorn package is important for running Heroku
+  
+ ## Deploy the application into Heroku
+ 
+ For deploying the web application into Heroku, the following steps have been performed:
+ 1. Create an account on Heroku (if non existent)
+ 2. Create the app name, which is included in the URL (network3dvisual in this case)
+ 3. Download and install Heroku CLI, which enables the devision and the control of Heroku applications directly via the terminal
+ 4. In the application file (app.py) under command app = dash.Dash(__name__) add command server = app.
+ 5. Being in the activated conda environment in the project directory, create .gitignore file for aiding Heroku to ignore some files of the project
+ 6. Devise Procfile 
+ 7. Devise requirements.txt via running :
+   _pip freeze > requirements.txt_
+   
+ 8. Login into Heroku : \
+    _heroku login_
+ 9. Associate your local git repository with the remote heroku repository : \
+    _heroku git: remote -a network3dvisual_
+ 10. Add all files and commit changes : \
+     _git add ._ \
+     _git commit -m "commit changes"_ 
+  11. Push changes to Heroku : \
+     _git push heroku main_ (I pushed an existing git repository into Heroku, otherwise run _git push heroku master_ for a new created git repository)
+
+
+## Visualization assumptions:
 
 - 2D : The weights of the edges are present both as a number in the middle of the edge and as the width of the edge. Larger width corresponds to larger edge weight. Due to networkX implementation, in interacted nodes, their shared edge contains arrowheads in both ends.
 
@@ -25,8 +77,6 @@ Assumptions about visualizations:
 - 3D : The display of the edge weights is performed by defining an additional trace for weights. Weights_trace is a scatter trace, of mode='text', with x, y, z lists being the middle point coordinates of the edges. 
 
 The interactive 3-D visualization of the network can be found [here](https://network3dvisual.herokuapp.com/).
-
-
 
 
 ## References
