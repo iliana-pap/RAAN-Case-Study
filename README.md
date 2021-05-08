@@ -96,7 +96,9 @@ NetworkX library utilize the [Fruchterman Reingold layout](https://github.com/ge
 * Plotly and Dash do not enable the drawing of directed graphs, with the exception of introducing arrows in the form of annotations. However, the aforementioned restricts the interactivity of the network edges during live rotations. To overcome this issue, directed edges between two nodes have their weights very close to each other. In this case, for avoiding the overlapping, a small offset to the position of the weight has been introduced during the examination of the reversed edge.
 * The display of the edge weights is performed by defining an additional trace for weights. Weights_trace is a scatter trace, of mode='text', with x, y, z lists being the middle point coordinates of the edges. 
 
-The interactive 3-D visualization of the network can be found [here](https://network3dvisual.herokuapp.com/).
+![image](Network_3D_Visualization.png)
+
+The live interactive 3-D visualization of the network can be found [here](https://network3dvisual.herokuapp.com/).
 
 
 ## References
