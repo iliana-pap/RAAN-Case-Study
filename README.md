@@ -2,7 +2,7 @@
 
 ## Interactive network 2-D and 3-D visualizations with NetworkX, Plotly, Dash and Heroku
 
-This project includes the 2D and 3D Visualizations of a network archichecture, utilizing networkX and plotly libraries as well as the creation of a web application via Dash and its deployment via Heroku.
+This project includes the 2D and 3D Visualizations of a network archichecture, utilizing NetworkX and Plotly libraries as well as the creation of a web application via Dash and its deployment via Heroku.
 
 [NetworkX](https://networkx.org/) constitutes a Python package, which aims to the devision, handling and evaluation of complex networks with respect to their structure, dynamics and functionality. 
 
@@ -18,11 +18,13 @@ The project pipeline can be summarized below:
 
 ## Installation instructions
 
-For running the application locally, please run 
+The application requires python installation via [Anaconda distribution](https://docs.anaconda.com/anaconda/install/) and is tested in Ubuntu 16.04 LTS.
+
+For running the application locally, please run :
 
 1. Clone the repository : \
     _git clone git@github.com:iliana-pap/RAAN-Case-Study.git_
-3. _cd RAAN-Case-Study_
+3. _cd RAAN-Case-Study/_
 4. Copy paste the data input file (raan_case_study interns.xlsx) into the directory
 5. Run _source Setup.sh_ for sourcing the script to run in the interactive session of the bash script
 
@@ -58,7 +60,7 @@ Alternatively, you can execute the following steps :
  3. Download and install Heroku CLI, which enables the devision and the control of Heroku applications directly via the terminal
  4. In the application file (app.py) under command app = dash.Dash(__name__) add command server = app.
  5. Being in the activated conda environment in the project directory, create .gitignore file for aiding Heroku to ignore some files of the project
- 6. Devise Procfile 
+ 6. Create Procfile file and add command web: gunicorn app:server
  7. Devise requirements.txt via running :
    _pip freeze > requirements.txt_
    
@@ -87,7 +89,7 @@ For updating the application on Heroku, follow the following steps:
 
 ## Visualization assumptions:
 
-NetworkX library utilize the [Fruchterman Reingold layout](https://github.com/gephi/gephi/wiki/Fruchterman-Reingold) for plotting [Force-directed graphs](https://en.wikipedia.org/wiki/Force-directed_graph_drawing) in an aesthetically-pleasing manner. According to these algorithms, the set of nodes and edges share forces, based on their relative positions, which aid in simulating the motion of nodes and adges as well as diminish their energy. In additon, ideally most of the edges share similar weights and they are exclusive with each other, avoiding cross-overlapping.
+NetworkX library utilizes the [Fruchterman Reingold layout](https://github.com/gephi/gephi/wiki/Fruchterman-Reingold) for plotting [Force-directed graphs](https://en.wikipedia.org/wiki/Force-directed_graph_drawing) in an aesthetically-pleasing manner. According to this type of algorithms, the set of nodes and edges share forces, based on their relative positions, which aid in simulating the motion of nodes and adges as well as diminish their energy. In additon, ideally most of the edges share similar weights and they are exclusive with each other, avoiding cross-overlapping.
 
  2D :
  
