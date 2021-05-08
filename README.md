@@ -18,7 +18,9 @@ The project pipeline can be summarized below:
 
 ## Installation instructions
 
-For running the application locally, please run 
+The application requires python installation via [Anaconda distribution](https://docs.anaconda.com/anaconda/install/) and is tested in Ubuntu 16.04 LTS.
+
+For running the application locally, please run :
 
 1. Clone the repository : \
     _git clone git@github.com:iliana-pap/RAAN-Case-Study.git_
