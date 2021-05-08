@@ -81,7 +81,7 @@ For updating the application on Heroku, follow the following steps:
 
 ## Visualization assumptions:
 
-- NetworkX library utilize the [Fruchterman Reingold layout](https://github.com/gephi/gephi/wiki/Fruchterman-Reingold) for plotting [Force-directed graphs](https://en.wikipedia.org/wiki/Force-directed_graph_drawing) in an aesthetically-pleasing manner. According to these algorithms, the set of nodes and edges share forces, based on their relative positions, which aid in simulating the motion of nodes and adges as well as diminish their energy. In additon, ideally most of the edges share similar weights and they are exclusive with each other, avoiding cross-overlapping.
+NetworkX library utilize the [Fruchterman Reingold layout](https://github.com/gephi/gephi/wiki/Fruchterman-Reingold) for plotting [Force-directed graphs](https://en.wikipedia.org/wiki/Force-directed_graph_drawing) in an aesthetically-pleasing manner. According to these algorithms, the set of nodes and edges share forces, based on their relative positions, which aid in simulating the motion of nodes and adges as well as diminish their energy. In additon, ideally most of the edges share similar weights and they are exclusive with each other, avoiding cross-overlapping.
 
  2D :
  
