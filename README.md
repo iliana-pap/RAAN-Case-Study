@@ -60,7 +60,7 @@ Alternatively, you can execute the following steps :
  3. Download and install Heroku CLI, which enables the devision and the control of Heroku applications directly via the terminal
  4. In the application file (app.py) under command app = dash.Dash(__name__) add command server = app.
  5. Being in the activated conda environment in the project directory, create .gitignore file for aiding Heroku to ignore some files of the project
- 6. Devise Procfile 
+ 6. Create Procfile file and add command web: gunicorn app:server
  7. Devise requirements.txt via running :
    _pip freeze > requirements.txt_
    
