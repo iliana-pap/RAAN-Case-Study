@@ -93,9 +93,9 @@ NetworkX library utilizes the [Fruchterman Reingold layout](https://github.com/g
 
  2D :
  
- * The networkX [spring_layout](https://networkx.org/documentation/stable/reference/generated/networkx.drawing.layout.spring_layout.html) is applied  with tuned parameters (k = 4, iterations = 50) for enhanced visualization. K refers to the optimal distance between nodes, where larger values move nodes farther apart. 
+ * The networkX [spring_layout](https://networkx.org/documentation/stable/reference/generated/networkx.drawing.layout.spring_layout.html) is applied  with tuned parameters (k = 10, iterations = 50) for enhanced visualization. K refers to the optimal distance between nodes, where larger values move nodes farther apart. 
  
-  * The weights of the edges are present both as a number in the middle of the edge and as the width of the edge. Larger width corresponds to larger edge weight. Due to networkX implementation, in interactive nodes their shared edge contains arrowheads in both ends.
+  * The weights of the edges are present both as a number in the middle of the edge and as the width of the edge. Larger width corresponds to larger edge weight. Due to networkX implementation, in interacting nodes, their shared edge contains arrowheads in both ends as well as both weights across the edge.
 
 ![image](Network_2D_Visualization.png)
 
