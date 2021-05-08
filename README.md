@@ -14,7 +14,7 @@ This project includes the 2D and 3D Visualizations of a network archichecture, u
 
 The project pipeline can be summarized below:
 
-![image](Project_Pipeline.png)
+![image](Project_Overview.png)
 
 ## Installation instructions
 
@@ -35,14 +35,14 @@ Alternatively, you can execute the following steps :
    _pip install dash==1.20.0_ \
    _pip install networkx==2.5.1_ \
    _pip install pandas==1.2.4_ \
-   _pip install matplotlib==3.4.1_ \ 
    _pip install xlrd==2.0.1_ \
-   _pip install openpyxl== 3.0.7_ \
-   _pip install gunicorn==20.1.0_ **
- 7. Run the application locally 
+   _pip install openpyxl==3.0.7_ \
+   _pip install matplotlib==3.4.1_\
+   **_pip install gunicorn==20.1.0_** *
+ 7. Run the application locally : \
     _python app.py_
    
-  ** gunicorn package is important for running Heroku
+  ***gunicorn package is important for running Heroku**
   
  ## Deploy the application into Heroku
  
@@ -66,6 +66,18 @@ Alternatively, you can execute the following steps :
   11. Push changes to Heroku : \
      _git push heroku main_ (I pushed an existing git repository into Heroku, otherwise run _git push heroku master_ for a new created git repository)
 
+For updating the application on Heroku, follow the following steps:
+1. _heroku login_
+2. Utilize Git to clone network3dvisual's source code to your local machine : \
+  _heroku git:clone -a network3dvisual_ \
+ _cd network3dvisual_
+3. Deploy new alterations : \
+    _git add ._ \
+    _git commit -m "commit changes"_ 
+4.  Push changes to Heroku : \
+     _git push heroku main_
+
+  
 
 ## Visualization assumptions:
 
