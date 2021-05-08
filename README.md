@@ -24,7 +24,7 @@ For running the application locally, please run :
 
 1. Clone the repository : \
     _git clone git@github.com:iliana-pap/RAAN-Case-Study.git_
-3. _cd RAAN-Case-Study_
+3. _cd RAAN-Case-Study/_
 4. Copy paste the data input file (raan_case_study interns.xlsx) into the directory
 5. Run _source Setup.sh_ for sourcing the script to run in the interactive session of the bash script
 
