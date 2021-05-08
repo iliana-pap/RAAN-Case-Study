@@ -41,7 +41,7 @@ def Read_Data():
         nodes_df : dataframe with source_id, target_id and weights
         
     """
-    
+   
     excel_file = pd.ExcelFile("raan_case_study interns.xlsx")
 
     # Extract excel sheets into dfs
